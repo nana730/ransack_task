@@ -8,13 +8,13 @@
   <%= label_tag nil, '期間' %>
   <%= f.date_field :deadline_gteq %> <!-- 締め切り以降 -->
   <span>~</span>
-  <%= f.date_field :deadline_lteq_end_of_day %> <!-- 締め切りまで -->
+  <%= f.date_field :deadline_lteq %> <!-- 締め切りまで -->
 
     <%= f.label :status %>
     <%= f.radio_button :status_eq, '', {:checked => true} %>指定なし
     <%= f.radio_button :status_eq, 0 %>to do
     <%= f.radio_button :status_eq, 1 %>doing
-    <%= f.radio_button :status_eq, 3 %>done
+    <%= f.radio_button :status_eq, 2 %>done
   
    <%= f.submit '検索' %>
 <%end%>
