@@ -6,7 +6,7 @@ class Task < ApplicationRecord
   # validate :deadline, :must_start_from_today
 
   def self.ransackable_attributes(auth_object = nil)
-    ["title", "description", "created_at", "updated_at", "deadline", "status"]
+    ["title", "description", "created_at", "updated_at", "deadline", "status", "created_at", "updated_at"]
   end
   
   def self.ransackable_associations(auth_object = nil)

@@ -3,9 +3,8 @@ class TasksController < ApplicationController
 
   # GET /tasks
   def index
-    params[:q] ||= { s: 'deadline desc' }
     @q = Task.ransack(params[:q])
-    @tasks = @q.result(distinct: true)
+    @tasks = @q.result(distinct: true).order("created_at desc")
   end
 
   # GET /tasks/1
