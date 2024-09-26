@@ -3,7 +3,7 @@ class TasksController < ApplicationController
 
   # GET /tasks
   def index
-    @tasks = Task.all
+    params[:q] ||= { s: 'deadline desc' }
     @q = Task.ransack(params[:q])
     @tasks = @q.result(distinct: true)
   end
